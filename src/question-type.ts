@@ -4,6 +4,21 @@ import { CardType } from "src/question";
 import { SRSettings } from "src/settings";
 import { findLineIndexOfSearchStringIgnoringWs } from "src/utils/strings";
 
+function findCommonIndentLength(lines: string[]): number {
+    // Find the minimum length of leading whitespace in all lines
+    if (lines.length === 0) return 0;
+    const minPrefixLength = lines.reduce((minLength, line) => {
+        const match = line.match(/^\s*/);
+        return Math.min(minLength, match ? match[0].length : 0);
+    }, Infinity);
+    return minPrefixLength;
+}
+
+function removeCommonIndent(lines: string[]): string[] {
+    const commonIndentLength = findCommonIndentLength(lines);
+    return lines.map((line) => line.slice(commonIndentLength));
+}
+
 export class CardFrontBack {
     front: string;
     back: string;
@@ -65,8 +80,8 @@ class QuestionTypeMultiLineBasic implements IQuestionTypeHandler {
             questionLines,
             settings.multilineCardSeparator,
         );
-        const side1: string = questionLines.slice(0, lineIdx).join("\n");
-        const side2: string = questionLines.slice(lineIdx + 1).join("\n");
+        const side1: string = removeCommonIndent(questionLines.slice(0, lineIdx)).join("\n");
+        const side2: string = removeCommonIndent(questionLines.slice(lineIdx + 1)).join("\n");
 
         const result: CardFrontBack[] = [new CardFrontBack(side1, side2)];
         return result;
@@ -81,8 +96,8 @@ class QuestionTypeMultiLineReversed implements IQuestionTypeHandler {
             questionLines,
             settings.multilineReversedCardSeparator,
         );
-        const side1: string = questionLines.slice(0, lineIdx).join("\n");
-        const side2: string = questionLines.slice(lineIdx + 1).join("\n");
+        const side1: string = removeCommonIndent(questionLines.slice(0, lineIdx)).join("\n");
+        const side2: string = removeCommonIndent(questionLines.slice(lineIdx + 1)).join("\n");
 
         const result: CardFrontBack[] = [
             new CardFrontBack(side1, side2),
