@@ -99,6 +99,9 @@ export default {
         "Cartas irmãs são geradas pelo texto da mesma carta ex: omissão de palavras",
     SHOW_CARD_CONTEXT: "Mostrar contexto nas cartas?",
     SHOW_CARD_CONTEXT_DESC: "ex: Título > Cabeçalho 1 > Subcabeçalho > ... > Subcabeçalho",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Porcentagem da Altura do Flashcard",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Deveria estar configurado em 100% em dispositivos móveis ou se você tem imagens muito grandes",
@@ -119,10 +122,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Random card from random deck",
     DISABLE_CLOZE_CARDS: "Desabilitar cartas que usam omissão de palavras?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "Converter ==marca-texto== em omissões?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Adiciona/remove o <code>${defaultPattern}</code> dos seus "Padrões de Omissão"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "Converter **texto em negrito** em omissões?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Adiciona/remove o <code>${defaultPattern}</code> dos seus "Padrões de Omissão"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "Converter {{chaves}} em omissões?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Adiciona/remove o <code>${defaultPattern}</code> dos seus "Padrões de Omissão"',
     CLOZE_PATTERNS: "Padrões de Omissão",
-    CLOZE_PATTERNS_DESC: "Entre os padrões de omissão separados por quebras de linha",
+    CLOZE_PATTERNS_DESC:
+        'Entre os padrões de omissão separados por quebras de linha. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Separador para flashcards inline",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Note que depois de mudar isso você vai ter que manualmente mudar quaisquer flashcards que você tenha.",
@@ -131,6 +141,7 @@ export default {
     MULTILINE_REVERSED_CARDS_SEPARATOR: "Separador para flashcards de múltiplas linhas reversos",
     MULTILINE_CARDS_END_MARKER: "Caracteres que denotam o fim de clozes e flashcards multilinha",
     NOTES: "Notas",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Habilitar painel de revisão de notas na inicialização",
     TAGS_TO_REVIEW: "Etiquetas para revisar",
     TAGS_TO_REVIEW_DESC:
@@ -170,6 +181,10 @@ export default {
     EASY_BONUS_DESC:
         "O bônus de fácil te permite mudar a diferência entre intervalos de responder OK e Fácil em um(a) flashcard/nota (mínimo = 100%).",
     EASY_BONUS_MIN_WARNING: "O bônus de fácil deve ser pelo menos 100.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Intervalo máximo em dias",
     MAX_INTERVAL_DESC:
         "Te permite colocar um limite máximo no intervalo (pré-definição = 100 anos).",
@@ -211,10 +226,14 @@ export default {
     INTERVALS_SUMMARY: "Intervalo em média: ${avg}, Maior intervalo: ${longest}",
     EASES: "Facilidades",
     EASES_SUMMARY: "Facilidade em média: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Tipos de Cartas",
     CARD_TYPES_DESC: "Isso também inclui cartas enterradas, caso existam",
     CARD_TYPE_NEW: "Novo",
     CARD_TYPE_YOUNG: "Jovem",
     CARD_TYPE_MATURE: "Amadurecido",
     CARD_TYPES_SUMMARY: "Total de cartas: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

@@ -98,6 +98,9 @@ export default {
         "Les cartes sœurs sont les cartes générées depuis le même texte, par exemple pour les textes à trous",
     SHOW_CARD_CONTEXT: "Montrer le contexte dans les cartes ?",
     SHOW_CARD_CONTEXT_DESC: "ex. Titre de la note > Titre 1 > Sous-titre > ... > Sous-titre",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Pourcentage de hauteur de la flashcard",
     CARD_MODAL_SIZE_PERCENT_DESC: "Devrait être 100% sur mobile ou en cas de grandes images",
     RESET_DEFAULT: "Réinitialiser les paramètres",
@@ -117,10 +120,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Carte au hasard dans un paquet au hasard",
     DISABLE_CLOZE_CARDS: "Désactiver les textes à trous ?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "Convertir ==soulignages== en trous ?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Ajouter/supprimer le <code>${defaultPattern}</code> de vos "Cloze Patterns"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "Convertir **gras** en trous ?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Ajouter/supprimer le <code>${defaultPattern}</code> de vos "Cloze Patterns"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "Convertir {{crochets}} en trous ?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Ajouter/supprimer le <code>${defaultPattern}</code> de vos "Cloze Patterns"',
     CLOZE_PATTERNS: "Cloze Patterns",
-    CLOZE_PATTERNS_DESC: "Enter cloze patterns separated by newlines",
+    CLOZE_PATTERNS_DESC:
+        'Enter cloze patterns separated by newlines. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Séparateur pour flashcards en une ligne",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Après avoir changé ce réglage, vous devrez manuellement mettre à jour toutes vos flashcards.",
@@ -130,6 +140,7 @@ export default {
     MULTILINE_CARDS_END_MARKER:
         "Caractères de fin de textes à trous ou de flashcards en plusieurs lignes",
     NOTES: "Notes",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Montrer le module d'apprentissage des notes au démarrage",
     TAGS_TO_REVIEW: "Tags à apprendre",
     TAGS_TO_REVIEW_DESC:
@@ -169,6 +180,10 @@ export default {
     EASY_BONUS_DESC:
         "Le bonus Facile vous permet d'augmenter l'intervalle entre une réponse Correct et une réponse Facile sur une flashcard/note (minimum = 100%).",
     EASY_BONUS_MIN_WARNING: "Le bonus Facile doit être au moins 100.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Intervalle maximum (en jours)",
     MAX_INTERVAL_DESC:
         "Vous permet de mettre une limite maximale sur l'intervalle (par défaut, 100 ans).",
@@ -212,10 +227,14 @@ export default {
     INTERVALS_SUMMARY: "Intervalle moyen : ${avg}. Intervalle maximum: ${longest}",
     EASES: "Facilité",
     EASES_SUMMARY: "Facilité moyenne : ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Types de cartes",
     CARD_TYPES_DESC: "Ceci inclut les cartes enterrées, s'il y en a",
     CARD_TYPE_NEW: "Nouvelles",
     CARD_TYPE_YOUNG: "En cours d'apprentissage",
     CARD_TYPE_MATURE: "Matures",
     CARD_TYPES_SUMMARY: "Total de cartes : ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

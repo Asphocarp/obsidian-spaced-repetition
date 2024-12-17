@@ -97,6 +97,9 @@ export default {
     SHOW_CARD_CONTEXT: "카드의 문맥(context)을 표시하시겠습니까?",
     SHOW_CARD_CONTEXT_DESC:
         "카드에서 'Title > Heading 1 > Subheading > ... > Subheading' 의 표시를 할지 설정합니다.",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "플래시카드 높이 비율",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "모바일 버전 혹은 매우 큰 이미지가 있는 경우 100%로 설정해야 합니다.",
@@ -117,10 +120,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Random card from random deck",
     DISABLE_CLOZE_CARDS: "빈 칸 채우기 카드를 비활성화하시겠습니까?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "==highlights== 를 빈 칸 채우기로 전환하시겠습니까?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        '"빈 칸 채우기 패턴" 에서 <code>${defaultPattern}</code> 를 추가/제거하시겠습니까?',
     CONVERT_BOLD_TEXT_TO_CLOZES: "**bolded text** 를 빈 칸 채우기로 전환하시겠습니까?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        '"빈 칸 채우기 패턴" 에서 <code>${defaultPattern}</code> 를 추가/제거하시겠습니까?',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "{{curly brackets}} 를 빈 칸 채우기로 전환하시겠습니까?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        '"빈 칸 채우기 패턴" 에서 <code>${defaultPattern}</code> 를 추가/제거하시겠습니까?',
     CLOZE_PATTERNS: "빈 칸 채우기 패턴",
-    CLOZE_PATTERNS_DESC: "빈 칸 채우기 패턴을 입력해주세요. 줄바꿈으로 구분합니다.",
+    CLOZE_PATTERNS_DESC:
+        '빈 칸 채우기 패턴을 입력해주세요. 줄바꿈으로 구분합니다. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "인라인 플래시카드 구분자",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "주의: 이 옵션을 수정한 후에는 이미 작성된 플래시카드를 수동으로 수정해야 함을 주의하십시오.",
@@ -129,6 +139,7 @@ export default {
     MULTILINE_REVERSED_CARDS_SEPARATOR: "여러 줄 반전 플래시카드 구분자",
     MULTILINE_CARDS_END_MARKER: "클로즈와 다중 행 플래시카드의 끝을 나타내는 문자",
     NOTES: "노트",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Enable note review pane on startup",
     TAGS_TO_REVIEW: "리뷰에 사용할 태그",
     TAGS_TO_REVIEW_DESC:
@@ -165,6 +176,10 @@ export default {
     EASY_BONUS_DESC:
         "쉬움(Easy) 보너스는 플래시카드/노트에서 좋음(Good)과 쉬움(Easy) 사이의 간격 차이를 설정할 수 있습니다. (최소 = 100%)",
     EASY_BONUS_MIN_WARNING: "쉬움(Easy) 보너스는 적어도 100이어야 합니다.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Maximum interval in days",
     MAX_INTERVAL_DESC: "간격의 상한선을 둘 수 있습니다. (기본값 = 100년)",
     MAX_INTERVAL_MIN_WARNING: "최대 간격은 적어도 1일이어야 합니다.",
@@ -205,10 +220,14 @@ export default {
     INTERVALS_SUMMARY: "평균 간격: ${avg}, 가장 긴 간격: ${longest}",
     EASES: "Eases",
     EASES_SUMMARY: "Average ease: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "카드 타입",
     CARD_TYPES_DESC: "여기에는 묻어둔 카드도 포함됩니다.",
     CARD_TYPE_NEW: "New",
     CARD_TYPE_YOUNG: "Young",
     CARD_TYPE_MATURE: "Mature",
     CARD_TYPES_SUMMARY: "전체 카드 수: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

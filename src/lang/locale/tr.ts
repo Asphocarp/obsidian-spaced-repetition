@@ -96,6 +96,9 @@ export default {
         "Kardeş kartlar, aynı kart metninden üretilen kartlardır (örneğin gizlemeler).",
     SHOW_CARD_CONTEXT: "Kartlarda bağlamı göster?",
     SHOW_CARD_CONTEXT_DESC: "Örneğin: Başlık > Başlık 1 > Alt Başlık > ... > Alt Başlık",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Flash Kart Yükseklik Yüzdesi",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Mobilde veya çok büyük resimleriniz varsa %100 olarak ayarlayın.",
@@ -116,10 +119,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Rastgele desteden rastgele kart",
     DISABLE_CLOZE_CARDS: "Gizli kartları devre dışı bırak?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "==Vurgulanan== metni gizli kartlara dönüştür?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        '"Cloze Patterns"den <code>${defaultPattern</code> öğesini ekleyin/kaldırın',
     CONVERT_BOLD_TEXT_TO_CLOZES: "**Kalın metni** gizli kartlara dönüştür?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        '"Cloze Patterns"den <code>${defaultPattern</code> öğesini ekleyin/kaldırın',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "{{Kıvırcık parantezleri}} gizli kartlara dönüştür?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        '"Cloze Patterns"den <code>${defaultPattern</code> öğesini ekleyin/kaldırın',
     CLOZE_PATTERNS: "Cloze Patterns",
-    CLOZE_PATTERNS_DESC: "Enter cloze patterns separated by newlines",
+    CLOZE_PATTERNS_DESC:
+        'Enter cloze patterns separated by newlines. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Satır içi flash kartlar için ayırıcı",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Bunu değiştirdikten sonra mevcut flash kartlarınızı manuel olarak düzenlemeniz gerektiğini unutmayın.",
@@ -129,6 +139,7 @@ export default {
     MULTILINE_CARDS_END_MARKER:
         "Gizli kartlar ve çok satırlı flash kartların sonunu belirten karakterler",
     NOTES: "Notlar",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Başlangıçta not inceleme panelini etkinleştir",
     TAGS_TO_REVIEW: "Gözden geçirilecek etiketler",
     TAGS_TO_REVIEW_DESC:
@@ -166,6 +177,10 @@ export default {
     EASY_BONUS_DESC:
         "Kolaylık bonusu, bir flash kartı/notu İyi ve Kolay yanıtladığınızda aralıklardaki farkı ayarlamanıza olanak tanır (minimum = %100).",
     EASY_BONUS_MIN_WARNING: "Kolaylık bonusu en az %100 olmalıdır.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Maksimum aralık (gün)",
     MAX_INTERVAL_DESC: "Aralığa bir üst sınır koymanıza olanak tanır (varsayılan = 100 yıl).",
     MAX_INTERVAL_MIN_WARNING: "Maksimum aralık en az 1 gün olmalıdır.",
@@ -207,10 +222,14 @@ export default {
     INTERVALS_SUMMARY: "Ortalama aralık: ${avg}, En uzun aralık: ${longest}",
     EASES: "Kolaylıklar",
     EASES_SUMMARY: "Ortalama kolaylık: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Kart Türleri",
     CARD_TYPES_DESC: "Bu, gömülü kartları da içerir (varsa)",
     CARD_TYPE_NEW: "Yeni",
     CARD_TYPE_YOUNG: "Genç",
     CARD_TYPE_MATURE: "Olgun",
     CARD_TYPES_SUMMARY: "Toplam kart: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

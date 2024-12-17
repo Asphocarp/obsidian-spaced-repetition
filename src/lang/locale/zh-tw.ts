@@ -92,6 +92,9 @@ export default {
     BURY_SIBLINGS_TILL_NEXT_DAY_DESC: "反轉卡片由同一卡片文字產生，例如：填空克漏字",
     SHOW_CARD_CONTEXT: "在卡片中顯示上下文？",
     SHOW_CARD_CONTEXT_DESC: "例如：標題 > 副標題 > 小標題 > ... > 小標題",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "卡片高度百分比",
     CARD_MODAL_SIZE_PERCENT_DESC: "在移動端或需要較大圖片時應設定為100%",
     RESET_DEFAULT: "重置為預設值",
@@ -109,10 +112,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "牌組及卡片都亂序",
     DISABLE_CLOZE_CARDS: "停用填空克漏字卡片？",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "將 ==高亮== 轉換為填空克漏字？",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        '在 "填空克漏字模式" 中加入/移除 <code>${defaultPattern}</code>',
     CONVERT_BOLD_TEXT_TO_CLOZES: "將 **粗體** 轉換為填空克漏字？",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        '在 "填空克漏字模式" 中加入/移除 <code>${defaultPattern}</code>',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "將 {{大括號}} 轉換為填空克漏字？",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        '在 "填空克漏字模式" 中加入/移除 <code>${defaultPattern}</code>',
     CLOZE_PATTERNS: "填空克漏字模式",
-    CLOZE_PATTERNS_DESC: "輸入以換行符分隔的填空克漏字模式",
+    CLOZE_PATTERNS_DESC:
+        '輸入以換行符分隔的填空克漏字模式. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "單行卡片的分隔字元",
     FIX_SEPARATORS_MANUALLY_WARNING: "注意：更改此選項後你將需要自行更改已存在卡片的分隔字元。",
     INLINE_REVERSED_CARDS_SEPARATOR: "單行反轉卡片的分隔字元",
@@ -120,6 +130,7 @@ export default {
     MULTILINE_REVERSED_CARDS_SEPARATOR: "多行翻轉卡片的分隔字元",
     MULTILINE_CARDS_END_MARKER: "表示填空和多行闪卡结束的字符",
     NOTES: "筆記",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "啟動時開啟筆記復習窗格",
     TAGS_TO_REVIEW: "復習標籤",
     TAGS_TO_REVIEW_DESC: "輸入標籤，用空格或換行字元分隔，例如：#review #tag2 #tag3.",
@@ -152,6 +163,10 @@ export default {
     EASY_BONUS: "簡單獎勵",
     EASY_BONUS_DESC: "簡單獎勵設定「記得」和「簡單」卡片或筆記的復習間隔差距（最小值100%）。",
     EASY_BONUS_MIN_WARNING: "簡單獎勵至少為100。",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "最大間隔（天）",
     MAX_INTERVAL_DESC: "設定復習的最大間隔時間（預設值100年）。",
     MAX_INTERVAL_MIN_WARNING: "最大間隔至少為1天",
@@ -191,10 +206,14 @@ export default {
     INTERVALS_SUMMARY: "平均間隔時間: ${avg}, 最長間隔時間: ${longest}",
     EASES: "掌握程度",
     EASES_SUMMARY: "平均掌握程度: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "卡片型別",
     CARD_TYPES_DESC: "如有，將顯示隱藏的卡片",
     CARD_TYPE_NEW: "新",
     CARD_TYPE_YOUNG: "較新",
     CARD_TYPE_MATURE: "熟悉",
     CARD_TYPES_SUMMARY: "總卡片數: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

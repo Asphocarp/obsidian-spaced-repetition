@@ -12,7 +12,6 @@ import { CardDueDateHistogram, NoteDueDateHistogram } from "src/due-date-histogr
 import { ISRFile, SrTFile } from "src/file";
 import { FlashcardReviewMode } from "src/flashcard-review-sequencer";
 import { Note } from "src/note";
-import { NoteEaseList } from "src/note-ease-list";
 import { NoteFileLoader } from "src/note-file-loader";
 import { NoteReviewQueue } from "src/note-review-queue";
 import { QuestionPostponementList } from "src/question-postponement-list";
@@ -32,7 +31,6 @@ export class OsrCore {
     private dataChangedHandler: () => void;
     protected osrNoteGraph: OsrNoteGraph;
     private osrNoteLinkInfoFinder: IOsrVaultNoteLinkInfoFinder;
-    private _easeByPath: NoteEaseList;
     private _questionPostponementList: QuestionPostponementList;
     private _noteReviewQueue: NoteReviewQueue;
 
@@ -67,10 +65,6 @@ export class OsrCore {
         return this._dueDateNoteHistogram;
     }
 
-    get easeByPath(): NoteEaseList {
-        return this._easeByPath;
-    }
-
     get cardStats(): Stats {
         return this._cardStats;
     }
@@ -80,11 +74,12 @@ export class OsrCore {
         osrNoteLinkInfoFinder: IOsrVaultNoteLinkInfoFinder,
         settings: SRSettings,
         dataChangedHandler: () => void,
+        noteReviewQueue: NoteReviewQueue,
     ): void {
         this.settings = settings;
         this.osrNoteLinkInfoFinder = osrNoteLinkInfoFinder;
         this.dataChangedHandler = dataChangedHandler;
-        this._noteReviewQueue = new NoteReviewQueue();
+        this._noteReviewQueue = noteReviewQueue;
         this._questionPostponementList = questionPostponementList;
         this._dueDateFlashcardHistogram = new CardDueDateHistogram();
         this._dueDateNoteHistogram = new NoteDueDateHistogram();

@@ -99,6 +99,9 @@ export default {
     SHOW_CARD_CONTEXT: "Mostrare contesto nelle schede?",
     SHOW_CARD_CONTEXT_DESC:
         "per esempio, Titolo > Intestazione 1 > Sottotitolo 1 > ... > Sottotitolo",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Percentuale altezza schede",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Dovrebbe essere 100% se sei su telefono o se hai immagini molto grandi",
@@ -121,10 +124,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Scheda a caso da mazzo a caso",
     DISABLE_CLOZE_CARDS: "Disabilita schede con spazi da riempire?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "Convertire ==testo evidenziato== in spazi da riempire?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Aggiungi/rimuovi <code>${defaultPattern}</code> dai tuoi "Modelli per spazi da riempire"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "Convertire **testo in grassetto** in spazi da riempire",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Aggiungi/rimuovi <code>${defaultPattern}</code> dai tuoi "Modelli per spazi da riempire"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "Convertire {{parentesi graffe}} in spazi da riempire?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Aggiungi/rimuovi <code>${defaultPattern}</code> dai tuoi "Modelli per spazi da riempire"',
     CLOZE_PATTERNS: "Modelli di spazi da riempire",
-    CLOZE_PATTERNS_DESC: "Inserisci i modelli di spazi da riempire separati da a capo",
+    CLOZE_PATTERNS_DESC:
+        'Inserisci i modelli di spazi da riempire separati da a capo. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Separatore per schede sulla stessa riga",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Si avvisa che dopo aver cambiato questo dovrai manualmente modificare le schede che hai già.",
@@ -134,6 +144,7 @@ export default {
     MULTILINE_CARDS_END_MARKER:
         "Caratteri che denotano la fine di carte con spazi da riempiere e carte multilinea",
     NOTES: "Note",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Abilita il pannello di revisione note all'avvio",
     TAGS_TO_REVIEW: "Etichette da rivedere",
     TAGS_TO_REVIEW_DESC:
@@ -172,6 +183,10 @@ export default {
     EASY_BONUS_DESC:
         "Il bonus facilità ti permette di impostare le differenze negli intervalli tra il rispondere Buono e Facile su una scheda o nota (minimo 100%).",
     EASY_BONUS_MIN_WARNING: "Il bonus facilità deve essere di almeno 100.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Intervallo massimo in giorni",
     MAX_INTERVAL_DESC:
         "Ti permette di mettere un limite massimo all'intervallo (default 100 anni).",
@@ -215,10 +230,14 @@ export default {
     INTERVALS_SUMMARY: "Intervallo medio: ${avg}, Intervallo massimo: ${longest}",
     EASES: "Difficoltà",
     EASES_SUMMARY: "Difficoltà media: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Tipi di schede",
     CARD_TYPES_DESC: "Include eventuali schede sepolte",
     CARD_TYPE_NEW: "Nuove",
     CARD_TYPE_YOUNG: "Giovani",
     CARD_TYPE_MATURE: "Mature",
     CARD_TYPES_SUMMARY: "Schede tottali: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

@@ -121,6 +121,19 @@ test("Test parsing of single line reversed cards", () => {
             clozePatterns: [],
         }),
     ).toEqual([[CardType.SingleLineReversed, "Question::Answer", 0, 0]]);
+    expect(
+        parseT("Qn 1?:>Answer.\n\nQn 2?<:>Answer.\n", {
+            singleLineCardSeparator: ":>",
+            singleLineReversedCardSeparator: "<:>",
+            multilineCardSeparator: ";>",
+            multilineReversedCardSeparator: "<;>",
+            multilineCardEndMarker: "---",
+            clozePatterns: [],
+        }),
+    ).toEqual([
+        [CardType.SingleLineBasic, "Qn 1?:>Answer.", 0, 0],
+        [CardType.SingleLineReversed, "Qn 2?<:>Answer.", 2, 2],
+    ]);
 
     // empty string or whitespace character provided
     expect(
@@ -298,6 +311,40 @@ test("Test parsing of multi line reversed cards", () => {
             clozePatterns: [],
         }),
     ).toEqual([[CardType.MultiLineReversed, "Question\n@@@\nAnswer", 0, 2]]);
+    expect(
+        parseT(
+            `line 1
+
+
+line 2
+
+Question 1?
+??
+Answer to question 1
+????
+line 3
+
+line 4
+
+Question 2?
+??
+Answer to question 2
+????
+Line 5
+`,
+            {
+                singleLineCardSeparator: ":::",
+                singleLineReversedCardSeparator: "::::",
+                multilineCardSeparator: "??",
+                multilineReversedCardSeparator: "???",
+                multilineCardEndMarker: "????",
+                clozePatterns: [],
+            },
+        ),
+    ).toEqual([
+        [CardType.MultiLineBasic, "Question 1?\n??\nAnswer to question 1", 5, 7],
+        [CardType.MultiLineBasic, "Question 2?\n??\nAnswer to question 2", 13, 15],
+    ]);
 
     // empty string or whitespace character provided
     expect(
@@ -636,14 +683,14 @@ test("Test parsing cards with codeblocks", () => {
     expect(
         parseT(
             "How do you ... Python?\n?\n" +
-                "```\nprint('Hello World!')\n\n\nprint('Howdy?')\n\nlambda x: x[0]\n```",
+                "```python\nprint('Hello World!')\n\n\nprint('Howdy?')\n\nlambda x: x[0]\n```",
             parserOptions,
         ),
     ).toEqual([
         [
             CardType.MultiLineBasic,
             "How do you ... Python?\n?\n" +
-                "```\nprint('Hello World!')\n\n\nprint('Howdy?')\n\nlambda x: x[0]\n```",
+                "```python\nprint('Hello World!')\n\n\nprint('Howdy?')\n\nlambda x: x[0]\n```",
             0,
             9,
         ],

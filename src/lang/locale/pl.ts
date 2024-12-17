@@ -96,6 +96,9 @@ export default {
         "Rodzeństwo to karty wygenerowane z tego samego tekstu karty, np. usunięcia zamaskowane",
     SHOW_CARD_CONTEXT: "Czy pokazywać kontekst na kartach?",
     SHOW_CARD_CONTEXT_DESC: "np. Tytuł > Nagłówek 1 > Podnagłówek > ... > Podnagłówek",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Procentowa wysokość fiszki",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Powinno być ustawione na 100% na urządzeniach mobilnych lub gdy masz bardzo duże obrazy",
@@ -119,10 +122,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Losowa karta z losowej talii",
     DISABLE_CLOZE_CARDS: "Wyłączyć karty zamaskowane?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "Konwertować ==podświetlenia== na karty zamaskowane?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Dodaj/usuń <code>${defaultPattern}</code> z "Wzory kart zamaskowanych"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "Konwertować pogrubiony tekst na karty zamaskowane?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Dodaj/usuń <code>${defaultPattern}</code> z "Wzory kart zamaskowanych"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "Konwertować {{klamry}} na karty zamaskowane?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Dodaj/usuń <code>${defaultPattern}</code> z "Wzory kart zamaskowanych"',
     CLOZE_PATTERNS: "Wzory kart zamaskowanych",
-    CLOZE_PATTERNS_DESC: "Wprowadź wzory kart zamaskowanych oddzielone nowymi liniami",
+    CLOZE_PATTERNS_DESC:
+        'Wprowadź wzory kart zamaskowanych oddzielone nowymi liniami. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Separator dla kart zamaskowanych w linii",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Pamiętaj, że po zmianie tego musisz ręcznie edytować wszystkie karty zamaskowane, które już masz.",
@@ -132,6 +142,7 @@ export default {
         "Separator dla kart zamaskowanych odwróconych wieloliniowych",
     MULTILINE_CARDS_END_MARKER: "Caracteres que denotam o fim de clozes e flashcards multilineares",
     NOTES: "Notatki",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Włączyć panel przeglądu notatek przy starcie",
     TAGS_TO_REVIEW: "Tagi do przeglądu",
     TAGS_TO_REVIEW_DESC:
@@ -169,6 +180,10 @@ export default {
     EASY_BONUS_DESC:
         "Bonus za łatwe pozwala ustawić różnicę w interwałach między odpowiedziami Średnio trudne i Łatwe na fiszce/notatce (minimum = 100%).",
     EASY_BONUS_MIN_WARNING: "Bonus za łatwe musi wynosić co najmniej 100.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Maksymalny interwał w dniach",
     MAX_INTERVAL_DESC: "Pozwala na ustawienie górnego limitu interwału (domyślnie = 100 lat).",
     MAX_INTERVAL_MIN_WARNING: "Maksymalny interwał musi wynosić co najmniej 1 dzień.",
@@ -209,10 +224,14 @@ export default {
     INTERVALS_SUMMARY: "Średni interwał: ${avg}, Najdłuższy interwał: ${longest}",
     EASES: "Łatwości",
     EASES_SUMMARY: "Średnia łatwość: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Typy kart",
     CARD_TYPES_DESC: "Obejmuje także ukryte karty, jeśli takie są",
     CARD_TYPE_NEW: "Nowe",
     CARD_TYPE_YOUNG: "Młode",
     CARD_TYPE_MATURE: "Stare",
     CARD_TYPES_SUMMARY: "Łączna liczba kart: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

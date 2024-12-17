@@ -99,6 +99,9 @@ export default {
     SHOW_CARD_CONTEXT: "カードにコンテキストを表示しますか？",
     SHOW_CARD_CONTEXT_DESC:
         "｢タイトル > 見出し 1 > 副見出し > ... > 副見出し｣の表示を行うかどうかを決めます。",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "フラッシュカードの縦サイズのパーセンテージ",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "モバイル版、または非常に大きなサイズの画像がある場合には100%にする必要があります。",
@@ -119,10 +122,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Random card from random deck",
     DISABLE_CLOZE_CARDS: "穴埋めカードを無効化しますか？",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "==ハイライト==を穴埋めとして使用しますか？",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        "このオプションを有効化すると、「穴埋めパターン」に${defaultPattern}が追加されます。",
     CONVERT_BOLD_TEXT_TO_CLOZES: "**ボールド体**を穴埋めとして使用しますか？",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        "このオプションを有効化すると、「穴埋めパターン」に${defaultPattern}が追加されます。",
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "{{中括弧}}を穴埋めとして使用しますか？",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        "このオプションを有効化すると、「穴埋めパターン」に${defaultPattern}が追加されます。",
     CLOZE_PATTERNS: "穴埋めパターン",
-    CLOZE_PATTERNS_DESC: "改行で区切って穴埋めパターンを入力してください。",
+    CLOZE_PATTERNS_DESC:
+        '改行で区切って穴埋めパターンを入力してください。 Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "インラインフラッシュカードに使用するセパレーター",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "このオプションを変更する場合には、作成済みのフラッシュカードを手動で編集し直す必要があることに注意してください。",
@@ -131,6 +141,7 @@ export default {
     MULTILINE_REVERSED_CARDS_SEPARATOR: "複数行の表裏反転フラッシュカードに使用するセパレーター",
     MULTILINE_CARDS_END_MARKER: "クローズと複数行フラッシュカードの終わりを示す文字",
     NOTES: "ノート",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Enable note review pane on startup",
     TAGS_TO_REVIEW: "レビューに使用するタグ",
     TAGS_TO_REVIEW_DESC:
@@ -168,6 +179,10 @@ export default {
     EASY_BONUS_DESC:
         "Easyボーナスによってフラッシュカード/ノートにおける間隔の差分を設定できます(最小値 = 100%)。",
     EASY_BONUS_MIN_WARNING: "Easyボーナスには100以上の数字を指定してください。",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Maximum interval in days",
     MAX_INTERVAL_DESC: "間隔に上限値を設定することができます(デフォルト値 = 100年)。",
     MAX_INTERVAL_MIN_WARNING: "間隔の最大値には1以上の数字を指定してください。",
@@ -208,10 +223,14 @@ export default {
     INTERVALS_SUMMARY: "間隔の平均値: ${avg}, 最長の間隔: ${longest}",
     EASES: "易しさ",
     EASES_SUMMARY: "易しさの平均値: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "カードタイプ",
     CARD_TYPES_DESC: "延期のカードがある場合にはこれに含まれます",
     CARD_TYPE_NEW: "新規",
     CARD_TYPE_YOUNG: "復習(初期)",
     CARD_TYPE_MATURE: "復習(後期)",
     CARD_TYPES_SUMMARY: "カードの合計: ${totalCardsCount}枚",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

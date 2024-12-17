@@ -104,6 +104,9 @@ export default {
         "Родственные карточки - те, которые образованы из одного текста, пример: карточки с пропусками ([...])",
     SHOW_CARD_CONTEXT: "Показывать контекст (уровень) в карточках (во время повторения)?",
     SHOW_CARD_CONTEXT_DESC: "пример: Title > Heading 1 > Subheading > ... > Subheading",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Высота карточки в процентах",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Если пользуетесь мобильным телефоном, выставьте 100%. Иначе у вас будут огромные изображения",
@@ -126,11 +129,18 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Случайная карта из случайной колоды",
     DISABLE_CLOZE_CARDS: "Выключить карты с пропусками (пример: [...])?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "Конвертировать ==выделенный текст== в пропуски (пример: [...])?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Добавить/удалить <code>${defaultPattern}</code> в ваши "Шаблоны пропусков"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "Конвертировать **жирный текст** в пропуски (пример: [...])?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Добавить/удалить <code>${defaultPattern}</code> в ваши "Шаблоны пропусков"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES:
         "Конвертировать {{фигурные скобки}} в пропуски (пример: [...])?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Добавить/удалить <code>${defaultPattern}</code> в ваши "Шаблоны пропусков"',
     CLOZE_PATTERNS: "Шаблоны пропусков",
-    CLOZE_PATTERNS_DESC: "Введите шаблоны пропусков, разделенные переводами строк",
+    CLOZE_PATTERNS_DESC:
+        'Введите шаблоны пропусков, разделенные переводами строк. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Разделитель для внутристрочных карточек",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Внимание! После изменения этого вам придётся вручную редактировать уже существующие карточки",
@@ -139,6 +149,7 @@ export default {
     MULTILINE_REVERSED_CARDS_SEPARATOR: "Разделитель для обратных многострочных карточек",
     MULTILINE_CARDS_END_MARKER: "Символы, обозначающие конец клозов и многострочных карточек",
     NOTES: "Заметки",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Включить панель изучения карточек при запуске программы",
     TAGS_TO_REVIEW: "Теги для изучения",
     TAGS_TO_REVIEW_DESC:
@@ -177,6 +188,10 @@ export default {
     EASY_BONUS_DESC:
         "Бонус за Легко позволяет вам установить разницу в промежутках между ответами Хорошо и Легко на карточке/заметке (мин. = 100%).",
     EASY_BONUS_MIN_WARNING: 'Бонус за "Легко" должен быть не меньше 100.',
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Максимальный интервал повторения в днях",
     MAX_INTERVAL_DESC:
         "Позволяет вам устанавливать верхнюю границу на интервал повторения (по умолчанию = 100 лет).",
@@ -218,10 +233,14 @@ export default {
     INTERVALS_SUMMARY: "Средний промежуток: ${avg}, Самый длинный промежуток: ${longest}",
     EASES: "Прогресс изучения",
     EASES_SUMMARY: "Среднее значение прогресса: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Типы карточек",
     CARD_TYPES_DESC: "Включая спрятанные карточки, если такие существуют.",
     CARD_TYPE_NEW: "Новых",
     CARD_TYPE_YOUNG: "Повторяемых",
     CARD_TYPE_MATURE: "Изученных",
     CARD_TYPES_SUMMARY: "Всего карточек: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

@@ -103,6 +103,9 @@ export default {
         "Verwandte Karten sind aus der gleichen Karte generiert worden (z.B. Lückentextkarten oder beidseitige Karten).",
     SHOW_CARD_CONTEXT: "Kontext in den Karten anzeigen?",
     SHOW_CARD_CONTEXT_DESC: "Bsp. Titel > Überschrift 1 > Sektion > ... > Untersektion",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Höhe der Lernkartei in Prozent",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Auf kleinen Bildschirmen (z.B. Smartphones) oder bei sehr grossen Bildern sollte dieser Wert auf 100% gesetzt werden.",
@@ -128,11 +131,18 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Zufällige Karte von zufälligem Stapel",
     DISABLE_CLOZE_CARDS: "Lückentextkarten deaktivieren?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "==Hervorgehobenen== Text in Lückentextkarten umwandeln?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Füge/entferne das <code>${defaultPattern}</code> zu deinen "Lückentextmuster" hinzu',
     CONVERT_BOLD_TEXT_TO_CLOZES: "**Fettgedruckten** Text in Lückentextkarten umwandeln?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Füge/entferne das <code>${defaultPattern}</code> zu deinen "Lückentextmuster" hinzu',
     CONVERT_CURLY_BRACKETS_TO_CLOZES:
         "{{Geschweifte Klammern}} Text in Lückentextkarten umwandeln?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Füge/entferne das <code>${defaultPattern}</code> zu deinen "Lückentextmuster" hinzu',
     CLOZE_PATTERNS: "Lückentextmuster",
-    CLOZE_PATTERNS_DESC: "Geben Sie Lückentextmuster durch Zeilenumbrüche getrennt ein",
+    CLOZE_PATTERNS_DESC:
+        'Geben Sie Lückentextmuster durch Zeilenumbrüche getrennt ein. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Trennzeichen für einzeilige Lernkarten",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Wenn diese Einstellung geändert wird, dann müssen die entsprechenden Lernkarten manuell angepasst werden.",
@@ -142,6 +152,7 @@ export default {
     MULTILINE_CARDS_END_MARKER:
         "Zeichen, die das Ende von Lückentexten und mehrzeiligen Flashcards kennzeichnen",
     NOTES: "Notizen",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Öffne Überprüfungswarteschlage beim start",
     TAGS_TO_REVIEW: "Zu wiederholende Tags",
     TAGS_TO_REVIEW_DESC:
@@ -182,6 +193,10 @@ export default {
     EASY_BONUS_DESC:
         "Der Einfachheit-Bonus gibt an um welchen Faktor (in Prozent) das Intervall länger sein soll, wenn eine Notiz / Karte 'Einfach' statt 'Gut' abgeschlossen wird. Minimum ist 100%.",
     EASY_BONUS_MIN_WARNING: "Der Einfachheit-Bonus muss mindestens 100 sein.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Maximale Intervall in Tagen",
     MAX_INTERVAL_DESC:
         "Das maximale Intervall (in Tagen) für Wiederholungen. Standard sind 100 Jahre.",
@@ -224,10 +239,14 @@ export default {
     INTERVALS_SUMMARY: "Durchschnittliches Intervall: ${avg}, Längstes Intervall: ${longest}",
     EASES: "Schwierigkeit",
     EASES_SUMMARY: "Durchschnittliche Schwierigkeit: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Kategorisierung",
     CARD_TYPES_DESC: "Verlegte Karten eingeschlossen",
     CARD_TYPE_NEW: "Neu",
     CARD_TYPE_YOUNG: "Jung",
     CARD_TYPE_MATURE: "Ausgereift",
     CARD_TYPES_SUMMARY: "Insgesamt ${totalCardsCount} Karten",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

@@ -13,7 +13,7 @@ export function osrSchedule(
     originalInterval: number,
     ease: number,
     delayedBeforeReview: number,
-    settingsObj: SRSettings,
+    settings: SRSettings,
     dueDateHistogram?: DueDateHistogram,
 ): Record<string, number> {
     const delayedBeforeReviewDays = Math.max(0, Math.floor(delayedBeforeReview / TICKS_PER_DAY));
@@ -22,33 +22,35 @@ export function osrSchedule(
     if (response === ReviewResponse.Easy) {
         ease += 20;
         interval = ((interval + delayedBeforeReviewDays) * ease) / 100;
-        interval *= settingsObj.easyBonus;
+        interval *= settings.easyBonus;
     } else if (response === ReviewResponse.Good) {
         interval = ((interval + delayedBeforeReviewDays / 2) * ease) / 100;
     } else if (response === ReviewResponse.Hard) {
         ease = Math.max(130, ease - 20);
         interval = Math.max(
             1,
-            (interval + delayedBeforeReviewDays / 4) * settingsObj.lapsesIntervalChange,
+            (interval + delayedBeforeReviewDays / 4) * settings.lapsesIntervalChange,
         );
     }
 
     // replaces random fuzz with load balancing over the fuzz interval
-    if (dueDateHistogram !== undefined) {
+    if (settings.loadBalance && dueDateHistogram !== undefined) {
         interval = Math.round(interval);
         // disable fuzzing for small intervals
-        if (interval > 4) {
-            let fuzz = 0;
-            if (interval < 7) fuzz = 1;
-            else if (interval < 30) fuzz = Math.max(2, Math.floor(interval * 0.15));
-            else fuzz = Math.max(4, Math.floor(interval * 0.05));
+        if (interval > 7) {
+            let fuzz: number;
+            // 3 day window: day - 1 <= x <= day + 1
+            if (interval <= 21) fuzz = 1;
+            // up to a week window: day - 3 <= x <= day + 3
+            else if (interval <= 180) fuzz = Math.min(3, Math.floor(interval * 0.05));
+            // up to a 2 weeks window: day - 7 <= x <= day + 7
+            else fuzz = Math.min(7, Math.floor(interval * 0.025));
 
-            const fuzzedInterval = dueDateHistogram.findLeastUsedIntervalOverRange(interval, fuzz);
-            interval = fuzzedInterval;
+            interval = dueDateHistogram.findLeastUsedIntervalOverRange(interval, fuzz);
         }
     }
 
-    interval = Math.min(interval, settingsObj.maximumInterval);
+    interval = Math.min(interval, settings.maximumInterval);
     interval = Math.round(interval * 10) / 10;
 
     return { interval, ease };

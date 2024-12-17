@@ -96,6 +96,9 @@ export default {
         "Příbuzné kartičky jsou kartičky generované z textu stejné poznámky například cloze smazání",
     SHOW_CARD_CONTEXT: "Ukázat kontext v kartičce?",
     SHOW_CARD_CONTEXT_DESC: "například Titulek > Nadpis1 > Podnadpis > ... > Podnadpis",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Výška kartiček v procentech",
     CARD_MODAL_SIZE_PERCENT_DESC:
         "Mělo by být nastaveno na 100% na mobilu nebo když používáte velké obrázky",
@@ -116,10 +119,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Random card from random deck",
     DISABLE_CLOZE_CARDS: "Vypnout cloze kartičky?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "Převést ==zvýraznění== na clozes?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Přidat/odstranit <code>${defaultPattern}</code> z vašich "Cloze vzorů"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "Převést **tučný text** na clozes?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Přidat/odstranit <code>${defaultPattern}</code> z vašich "Cloze vzorů"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "Převést {{složené závorky}} na clozes?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Přidat/odstranit <code>${defaultPattern}</code> z vašich "Cloze vzorů"',
     CLOZE_PATTERNS: "Cloze vzory",
-    CLOZE_PATTERNS_DESC: "Zadejte cloze vzory oddělené odřádkováním",
+    CLOZE_PATTERNS_DESC:
+        'Zadejte cloze vzory oddělené odřádkováním. Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Oddělovač pro inline kartičky",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Pozor. Jakmile toto změníte, budete muset ručně upravit všechny existující kartičky.",
@@ -128,6 +138,7 @@ export default {
     MULTILINE_REVERSED_CARDS_SEPARATOR: "Oddělovač pro víceřádkove otočené kartičky",
     MULTILINE_CARDS_END_MARKER: "Znaky označující konec clozes a víceřádkových flash karet",
     NOTES: "Poznámky",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Enable note review pane on startup",
     TAGS_TO_REVIEW: "Tag pro revizi",
     TAGS_TO_REVIEW_DESC:
@@ -164,6 +175,10 @@ export default {
     EASY_BONUS_DESC:
         "Tento bonus umožňuje nastavit rozdíl intervalu mezi jednoduchými a dobrými kartičkami/poznámkami (minimum = 100%).",
     EASY_BONUS_MIN_WARNING: "Bonus pro jednoduchost musí být minimálně 100.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Maximum interval in days",
     MAX_INTERVAL_DESC: "Umožňuje nastavit horní limit pro interval (defaultně = 100 let).",
     MAX_INTERVAL_MIN_WARNING: "Maximální interval musí být alespoň 1 den.",
@@ -204,10 +219,14 @@ export default {
     INTERVALS_SUMMARY: "Průměrný interval: ${avg}, Nejdelší interval: ${longest}",
     EASES: "Složitost",
     EASES_SUMMARY: "Průměrná složitost: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Typy kartiček",
     CARD_TYPES_DESC: "Obsahuje i odložené kartičky (pokud existují)",
     CARD_TYPE_NEW: "Nová",
     CARD_TYPE_YOUNG: "Mladá",
     CARD_TYPE_MATURE: "Dospělá",
     CARD_TYPES_SUMMARY: "Kartiček celkem: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };

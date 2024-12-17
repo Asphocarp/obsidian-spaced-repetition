@@ -97,6 +97,9 @@ export default {
         "Los hermanos son tarjetas generadas del mismo texto de la tarjeta, por ejemplo, deletreos de huecos (cloze deletions en inglés)",
     SHOW_CARD_CONTEXT: "¿Mostrar contexto en las tarjetas?",
     SHOW_CARD_CONTEXT_DESC: "Por Ejemplo: Título > Cabecera > Sub-Cabecera > ... > Sub-Cabecera",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS: "Show next review time in the review buttons",
+    SHOW_INTERVAL_IN_REVIEW_BUTTONS_DESC:
+        "Useful to know how far in the future your cards are being pushed.",
     CARD_MODAL_HEIGHT_PERCENT: "Porcentaje de la altura de las tarjetas de memoria",
     CARD_MODAL_SIZE_PERCENT_DESC: "Debería ser establecido en 100% si tienes imágenes grandes",
     RESET_DEFAULT: "Reiniciar a la configuración por defecto",
@@ -116,10 +119,17 @@ export default {
     REVIEW_DECK_ORDER_RANDOM_DECK_AND_CARD: "Random card from random deck",
     DISABLE_CLOZE_CARDS: "¿Deshabilitar deletreo de huecos en las tarjetas?",
     CONVERT_HIGHLIGHTS_TO_CLOZES: "¿Convertir ==resaltados== a deletreo de huecos?",
+    CONVERT_HIGHLIGHTS_TO_CLOZES_DESC:
+        'Añadir/eliminar el <code>${defaultPattern}</code> de tus "Patrones de Deletreo de Huecos"',
     CONVERT_BOLD_TEXT_TO_CLOZES: "¿Convertir **texto en negrita** a deletreo de huecos?",
+    CONVERT_BOLD_TEXT_TO_CLOZES_DESC:
+        'Añadir/eliminar el <code>${defaultPattern}</code> de tus "Patrones de Deletreo de Huecos"',
     CONVERT_CURLY_BRACKETS_TO_CLOZES: "¿Convertir {{llaves rizadas}} a deletreo de huecos?",
+    CONVERT_CURLY_BRACKETS_TO_CLOZES_DESC:
+        'Añadir/eliminar el <code>${defaultPattern}</code> de tus "Patrones de Deletreo de Huecos"',
     CLOZE_PATTERNS: "Patrones de deletreo de huecos",
-    CLOZE_PATTERNS_DESC: "Escriba los patrones de deletreo de huecos separados por saltos de línea",
+    CLOZE_PATTERNS_DESC:
+        'Escriba los patrones de deletreo de huecos separados por saltos de línea. . Check the <a href="${docsUrl}">wiki</a> for guidance.',
     INLINE_CARDS_SEPARATOR: "Separador de tarjetas de memorización en línea",
     FIX_SEPARATORS_MANUALLY_WARNING:
         "Note que después de cambiar este ajuste, tendrá que cambiar manualmente todas las notas que tenga.",
@@ -131,6 +141,7 @@ export default {
     MULTILINE_CARDS_END_MARKER:
         "Caracteres que denotan el fin de los clozes y tarjetas didácticas de varias líneas",
     NOTES: "Notes",
+    NOTE: "Note",
     REVIEW_PANE_ON_STARTUP: "Activar panel de revisión de notas al arrancar",
     TAGS_TO_REVIEW: "Etiquetas a revisar",
     TAGS_TO_REVIEW_DESC:
@@ -169,6 +180,10 @@ export default {
     EASY_BONUS_DESC:
         "La bonificación para Fácil te permite establecer la diferencia entre intervalos al responder Bien y Fácil en las tarjetas o notas (mínimo = 100%).",
     EASY_BONUS_MIN_WARNING: "El bono de facilidad debe ser al menos 100.",
+    LOAD_BALANCE: "Enable load balancer",
+    LOAD_BALANCE_DESC: `Slightly tweaks the interval so that the number of reviews per day is more consistent.
+        It's like Anki's fuzz but instead of being random, it picks the day with the least amount of reviews.
+        It's turned off for small intervals.`,
     MAX_INTERVAL: "Intervalo máximo en días",
     MAX_INTERVAL_DESC:
         "Te permite establecer un límite mayor en el intervalo (por defecto es de 100 años).",
@@ -211,10 +226,14 @@ export default {
     INTERVALS_SUMMARY: "Intervalo de carga: ${avg}, Intervalo mayor: ${longest}",
     EASES: "Facilidad",
     EASES_SUMMARY: "Carga de Facilidad: ${avgEase}",
+    EASE: "Ease",
     CARD_TYPES: "Tipos de tarjetas",
     CARD_TYPES_DESC: "Esto incluye también a las tarjetas enterradas, si las hay",
     CARD_TYPE_NEW: "Nueva",
     CARD_TYPE_YOUNG: "Joven",
     CARD_TYPE_MATURE: "Madura",
     CARD_TYPES_SUMMARY: "Tarjetas Totales: ${totalCardsCount}",
+    SEARCH: "Search",
+    PREVIOUS: "Previous",
+    NEXT: "Next",
 };
